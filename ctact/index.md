@@ -14,4 +14,6 @@ function formatTimestamp(epochTimestamp) {
 const epochTimestamp = 1697455800;
 const formattedTimestamp = formatTimestamp(epochTimestamp);
 </script>
+<p>
 Well yeah {{ formatTimestamp(1697455800) }} ig
+</p>
