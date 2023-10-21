@@ -1,4 +1,4 @@
-# This was produced by (@eimikadabra on discord) and is worth 2 hours of work. Please respect the code and Do not steal.
+# This was produced by (@eimikadabra on discord) and is worth 2 hours of work. Please respect the code and Do not steal!
 
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -TypeDefinition @"
