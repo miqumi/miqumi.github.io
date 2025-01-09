@@ -1,0 +1,21 @@
+#!/bin/bash
+
+GROUP_SIZE=6
+
+echo "ze number:"
+read N
+
+counter=0
+
+for (( i=0; i<N; i++ ))
+do
+    power_of_2=$((2**i))
+    
+    echo $power_of_2
+
+    counter=$((counter+1))
+    if (( counter == GROUP_SIZE )); then
+        echo ""
+        counter=0
+    fi
+done
