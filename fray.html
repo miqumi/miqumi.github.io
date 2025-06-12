@@ -1,0 +1,85 @@
+<--! you might be able to tell... I use the first html formatter i see when i google -->
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>fray</title>
+      <style>
+         html, body {
+         margin: 0;
+         height: 100%;
+         background-color: black;
+         color: white;
+         font-family: 'Courier New', Courier, monospace;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         }
+         body {
+         flex-direction: column;
+         text-align: center;
+         padding: 1em;
+         box-sizing: border-box;
+         gap: 5em;
+         }
+         .main-text {
+         line-height: 1.6;
+         }
+         a:link {
+         color: #1990ff;
+         text-decoration: none;
+         }
+         a:visited {
+         color: #404dff;
+         }
+         a:hover {
+         color: #19ffff;
+         text-decoration: underline;
+         }
+         a:active {
+         color: #0015ff;
+         text-decoration: underline;
+         }
+      </style>
+   </head>
+<--! context: -->
+<--! first use: -->
+<--! against deceterbee -->
+   <body>
+      <div class="main-text" id="mainText">
+         hihi if you are here i probably wanted to send a link to cuz<br>
+         it fits in but i didnt actually have a link to send to u so<br>
+         uh yea sry for doing this to u lolzz ----------- >U< -------
+      </div>
+      <div>--- <a href="me">miqumi</a></div>
+      <script>
+         const originalHTML = `hihi if you are here i probably wanted to send a link to cuz<br>
+         it fits in but i didnt actually have a link to send to u so<br>
+         uh yea sry for doing this to u lolzz ----------- >U< -------`;
+         
+         const plainText = `hihi if you are here i probably wanted to send a link to cuz it fits in but i didnt actually have a link to send to u so uh yea sry for doing this to u lolzz ----------- >U< -------`;
+         
+         const textDiv = document.getElementById("mainText");
+         
+         function updateTextByOrientation() {
+         const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+         const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+         
+         if (isMobile && isPortrait) {
+         	textDiv.innerText = plainText;
+         } else {
+         	textDiv.innerHTML = originalHTML;
+         	}
+         }
+         
+         //on page load
+         updateTextByOrientation();
+         
+         // upd-ate on device rot-ate
+         window.matchMedia("(orientation: portrait)").addEventListener("change", updateTextByOrientation);
+         
+          
+      </script>
+   </body>
+</html>
