@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>imag ;p</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: Consolas, monospace;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #img-container {
+      display: none;
+      text-align: center;
+    }
+
+    #message {
+      font-size: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="img-container">
+    <img id="ze-imag" alt="img" />
+  </div>
+  <div id="message">hang on..</div>
+
+  <script>
+    const img = document.getElementById('ze-imag');
+    const container = document.getElementById('img-container');
+    const message = document.getElementById('message');
+
+    fetch('https://5a3a8eb7b165.ngrok-free.app/crtdark.webp', {
+      headers: {
+        'ngrok-skip-browser-warning': 'value'
+      }
+    })
+    .then(response => {
+      return response.blob();
+    })
+    .then(blob => {
+      const imgURL = URL.createObjectURL(blob);
+      img.src = imgURL;
+
+      img.onload = () => {
+        message.style.display = 'none';
+        container.style.display = 'block';
+
+        setTimeout(() => {
+          container.style.display = 'none';
+          message.style.display = 'block';
+          message.textContent = 'you already viewed it, loser ;p';
+        }, 900);
+      };
+    })
+    .catch(error => {
+      console.error('Error loading image:', error);
+      message.textContent = 'you already viewed it, loser ;p';
+    });
+  </script>
+</body>
+</html>
