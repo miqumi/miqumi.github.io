@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- Ok guys see I tootally suc at html and i cooked tis page
+     in like .. 1 day .. the audio player is awesome and is taken from
+     github/DeadSuperHero/myspace-music-player-extended or
+     codeberg.org/deadsuperhero/myspace-music-player-extended
+     with like barely much tweaks... except some stylistic changes and
+     file path changes and as such i was originally gonna include a
+     diff of my tweaks but im tired oh well yah ok good night
+-->
+
+<!-- side note: i just realized this myspace player clone is built
+     off of a javascript library called amplitudeJS; i have 0 clue
+     how i didn't notice this earlier but oh well i do now
+     i need to lock in for js 100% 100%
+-->
+
+<!-- side-side note: i learned like 5 new things about js today to
+     randomly chose between the two songs i have which are chosen at
+     page load... wow... the sky is the limit...
+-->
+
+<!-- side-side-side note: i forgot what i was gonna say...
+     well...
+
+     i remember i used to spend so many hours with my friends in my
+     flat minecraft semi-creative world... i was trying to figure out
+     a way to add progression to the flat world... but then i just
+     ended up lettin it be and ... well... ... friends... one was my
+     classmate and so many those ive never seen personally or dont
+     know what they look like, are named, but i had fun with them...
+     haha..
+     reminds me of this gamergirl person who once asked me if they
+     looked old and i said yes so they started tweaking out hahaha...
+     dang... its been a while..
+     miss yall
+
+     hope we could come together once more and talk and play and
+     explore...
+
+     bot..
+
+     JUST found him and then lost contact again...
+
+     thats a story for another day though...
+     hope we all could come together again.. and talk.. and play..
+     cherish our old memories..
+     but do they all feel the same way about me and us all.. like
+     i do?..
+
+     nonetheless.. i cherish them.. very dearly
+-->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>lair</title>
+  <link rel="stylesheet" type="text/css" href="assets/flake/app.css"/>
+  <script type="text/javascript" src="assets/flake/amplitude.js"></script>
+  <style>
+    @font-face {
+      font-family: 'Papyrus';
+      src: url('assets/flake/papyrus.ttf') format('truetype');
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #a4b6ba;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Papyrus', monospace;
+      overflow: hidden;
+    }
+
+    .text {
+      font-size: 45px;
+      text-align: center;
+    }
+
+    #song-player {
+      position: fixed;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    z-index: 2;
+    }
+    .emoji {
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+    }
+
+    .side {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .left { left: 0; }
+    .right { right: 0; }
+
+    .flake {
+      font-size: 22px;
+      color: black;
+      opacity: 0.6;
+      animation: twinkle 5s infinite ease-in-out;
+      position: relative;
+    }
+
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+
+    .flake:nth-child(odd) { animation-duration: 2.5s; }
+    .flake:nth-child(even) { animation-duration: 4s; }
+
+
+    .flake:nth-child(3n) { left: -6px; }
+    .flake:nth-child(4n) { left: 6px; }
+  </style>
+</head>
+<body>
+
+  <div class="side left">
+    <div class="flake">❄</div><div class="flake">❄</div><div class="flake">❄</div>
+    <div class="flake">❄</div><div class="flake">❄</div><div class="flake">❄</div>
+    <div class="flake">❄</div><div class="flake">❄</div><div class="flake">❄</div>
+    <div class="flake">❄</div><div class="flake">❄</div><div class="flake">❄</div>
+    <div class="flake">❄</div><div class="flake">❄</div><div class="flake">❄</div>
+  </div>
+
+  <div class="text">
+    im so done <img src="https://em-content.zobj.net/source/apple/51/broken-heart_1f494.png" alt="💔" class="emoji">
+  </div>
+
+    <div id="song-player" class="mono">
+            <div class="control-container">
+                  <div class="amplitude-play-pause mono" id="play-pause">
+                    <button id="play-pause" class="player mono">
+                      <i class="icon-pause mono"></i>
+                      <i class="icon-pause mono shadow"></i>
+                      <i class="icon-play mono"></i>
+                      <i class="icon-play mono shadow"></i>
+                    </button>
+                  </div>
+              <div class="meta-container">
+                <div id="song-meta">
+                  <div class="meta-left">
+                  <img data-amplitude-song-info="cover_art_url" amplitude-main-song-info="true" class="album"/>
+                  <div class="song-text">
+                    <span data-amplitude-song-info="name" class="song-name" style="font-family: monospace;" ></span>
+                    <span data-amplitude-song-info="artist"></span>
+                      <div class="time-container">
+                        <span class="current-time">
+                          <span class="amplitude-current-minutes"></span>:<span class="amplitude-current-seconds"></span>
+                        </span>
+                        <span class="divider">/</span>
+                        <span class="duration">
+                          <span class="amplitude-duration-minutes"></span>:<span class="amplitude-duration-seconds"></span>
+                        </span>
+                      </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+  <div class="side right">
+    <div class="flake">❄</div><div class="flake">❄</div><div class="flake">❄</div>
+    <div class="flake">❄</div><div class="flake">❄</div><div class="flake">❄</div>
+    <div class="flake">❄</div><div class="flake">❄</div><div class="flake">❄</div>
+    <div class="flake">❄</div><div class="flake">❄</div><div class="flake">❄</div>
+    <div class="flake">❄</div><div class="flake">❄</div><div class="flake">❄</div>
+  </div>
+</body>
+</html>
+
+  <script type="text/javascript">
+  const songs = [
+    {
+      "name": "Girl Next Door",
+      "artist": "Toby Fox",
+      "album": "Deltarune OST",
+      "url": "assets/flake/noelle_school.ogg",
+      "cover_art_url": "assets/flake/rune.png"
+    },
+    {
+      "name": "Gingerbread House",
+      "artist": "Toby Fox",
+      "album": "Deltarune OST",
+      "url": "assets/flake/noelle_house_wip.ogg",
+      "cover_art_url": "assets/flake/rune.png"
+    }
+  ];
+
+  // tis what am talkin bout
+  const randomSong = songs[Math.floor(Math.random() * songs.length)];
+
+  Amplitude.init({
+    bindings: {
+      37: 'prev',
+      39: 'next',
+      32: 'play_pause'
+    },
+    songs: [randomSong]
+  });
+
+    window.onkeydown = function(e) {
+        return !(e.keyCode == 32);
+    };
+
+    document.getElementById('button#play').addEventListener('click', function(e){
+      var offset = this.getBoundingClientRect();
+      var x = e.pageX - offset.left;
+
+      Amplitude.setSongPlayedPercentage( ( parseFloat( x ) / parseFloat( this.offsetWidth) ) * 100 );
+
+    });
+  </script>
