@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- Ok guys see I tootally suc at html and i cooked tis page
+     in like .. 1 day .. previously there used to be an audio
+     player on this page, hence why i said it took me so much time
+     the audio player is awesome and is taken from
+     github/DeadSuperHero/myspace-music-player-extended or
+     codeberg.org/deadsuperhero/myspace-music-player-extended
+     with like barely much tweaks... except some stylistic changes and
+     file path changes and as such i was originally gonna include a
+     diff of my tweaks but im tired oh well yah ok good night
+-->
+
+<!-- side note: i just realized this myspace player clone is built
+     off of a javascript library called amplitudeJS; i have 0 clue
+     how i didn't notice this earlier but oh well i do now
+     i need to lock in for js 100% 100%
+-->
+
+<!-- side-side note: i learned like 5 new things about js today to
+     randomly chose between the two songs i have which are chosen at
+     page load... wow... the sky is the limit...
+-->
+
+<!-- side-side-side note: i forgot what i was gonna say...
+     well...
+
+     i remember i used to spend so many hours with my friends in my
+     flat minecraft semi-creative world... i was trying to figure out
+     a way to add progression to the flat world... but then i just
+     ended up lettin it be and ... well... ... friends... one was my
+     classmate and so many those ive never seen personally or dont
+     know what they look like, are named, but i had fun with them...
+     haha..
+     reminds me of this gamergirl person who once asked me if they
+     looked old and i said yes so they started tweaking out hahaha...
+     dang... its been a while..
+     miss yall
+
+     hope we could come together once more and talk and play and
+     explore...
+
+     bot..
+
+     JUST found him and then lost contact again...
+
+     thats a story for another day though...
+     hope we all could come together again.. and talk.. and play..
+     cherish our old memories..
+     but do they all feel the same way about me and us all.. like
+     i do?..
+
+     nonetheless.. i cherish them.. very dearly
+-->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>home</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #000000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: monospace;
+      overflow: hidden;
+    }
+
+    .text {
+      font-size: 25px;
+      text-align: center;
+    }
+
+    #song-player {
+      position: fixed;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    z-index: 2;
+    }
+    .emoji {
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+    }
+
+    .side {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .left { left: 0; }
+    .right { right: 0; }
+
+    .flake {
+      font-size: 22px;
+      color: black;
+      opacity: 0.6;
+      animation: twinkle 5s infinite ease-in-out;
+      position: relative;
+    }
+
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+
+    .flake:nth-child(odd) { animation-duration: 2.5s; }
+    .flake:nth-child(even) { animation-duration: 4s; }
+
+
+    .flake:nth-child(3n) { left: -6px; }
+    .flake:nth-child(4n) { left: 6px; }
+  </style>
+</head>
+<body>
+  <div class="text">
+    please, wake up</div>
+</body>
+</html>
+
+ 
